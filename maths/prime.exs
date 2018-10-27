@@ -1,4 +1,12 @@
 defmodule Prime do
+  @moduledoc """
+  This is a primality test function
+
+  Algorithm figured out from here
+    -> http://www.wikizeroo.com/index.php?q=aHR0cHM6Ly9lbi53aWtpcGVkaWEub3JnL3dpa2kvUHJpbWFsaXR5X3Rlc3QjUHJvYmFiaWxpc3RpY190ZXN0cw
+  """
+
+  @doc false
   def check(n) do
     cond do
       n <= 1 ->
@@ -11,6 +19,7 @@ defmodule Prime do
     end
   end
 
+  @doc false
   defp loop(i, n) do
     case i * i <= n do
       true -> if rem(n, i) == 0 or rem(n, (i + 2)) == 0, do: false, else: loop(i + 6, n)
